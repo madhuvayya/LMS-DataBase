@@ -179,6 +179,21 @@ CREATE TABLE lms.maker_program (
 	FOREIGN KEY (tech_type_id) REFERENCES tech_type(id)
 );
 
+-- sql query to create app_parameters table
+
+CREATE TABLE lms.app_parameters (
+    id INT UNSIGNED NOT NULL,
+    key_type VARCHAR(20) NOT NULL,
+    key_value VARCHAR(15) NOT NULL,
+    key_text VARCHAR(10) NOT NULL,
+    cur_status VARCHAR(2) NOT NULL,
+    lastupd_user VARCHAR(40) NOT NULL,
+    lastupd_stamp TIMESTAMP NOT NULL,
+    creator_stamp TIMESTAMP NOT NULL,
+    creator_user VARCHAR(45) NOT NULL,
+    seq_num INT NOT NULL
+);
+
 -- sql query to create mentor table
 
 CREATE TABLE lms.mentor (
