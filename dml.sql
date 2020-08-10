@@ -167,3 +167,15 @@ CREATE TABLE `lms`.`candidate_qualification` (
     REFERENCES `lms`.`fellowship_candidate` (`candidate_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
+
+-- sql query to create lab table
+
+CREATE TABLE `lms`.`lab` (
+  `id` INT NOT NULL,
+  `name` VARCHAR(45) NOT NULL,
+  `location` VARCHAR(45) NOT NULL,
+  `address` VARCHAR(250) NOT NULL,
+  `status` VARCHAR(45) NOT NULL,
+  `creator_stamp` TIMESTAMP(6) NOT NULL,
+  `creator_user` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`));
