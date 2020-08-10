@@ -123,3 +123,15 @@ CREATE TABLE `lms`.`candidate_documents` (
     REFERENCES `lms`.`fellowship_candidate` (`candidate_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
+
+-- sql query for creating company
+
+CREATE TABLE `lms`.`company` (
+  `id` INT UNSIGNED NOT NULL,
+  `name` VARCHAR(50) NOT NULL,
+  `address` VARCHAR(200) NOT NULL,
+  `location` VARCHAR(45) NOT NULL,
+  `status` VARCHAR(45) NOT NULL,
+  `creator_stamp` TIMESTAMP(6) NOT NULL,
+  `creator_user` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`));
