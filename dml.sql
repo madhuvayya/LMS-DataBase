@@ -160,6 +160,25 @@ CREATE TABLE lms.company (
   PRIMARY KEY (id)
 );
 
+-- sql query to create maker_program table
+
+CREATE TABLE lms.maker_program (
+	id INT UNSIGNED NOT NULL,
+    program_name VARCHAR(50) NOT NULL,
+    program_type VARCHAR(50) NOT NULL,
+    program_link VARCHAR(50) NOT NULL,
+    tech_stack_id INT NOT NULL,
+    tech_type_id INT NOT NULL,
+    is_program_approved VARCHAR(10) NOT NULL,
+    description VARCHAR(250) NOT NULL,
+    status VARCHAR(10) NOT NULL,
+    creator_stamp TIMESTAMP NOT NULL,
+    creator_user VARCHAR(45) NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (tech_stack_id) REFERENCES tech_stack(id),
+	FOREIGN KEY (tech_type_id) REFERENCES tech_type(id)
+);
+
 -- sql query to create mentor table
 
 CREATE TABLE lms.mentor (
