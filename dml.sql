@@ -189,3 +189,15 @@ CREATE TABLE `lms`.`tech_type` (
   `creator_stamp` TIMESTAMP(6) NOT NULL,
   `creator_user` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`));
+
+-- sql query to create tech_stack table
+
+CREATE TABLE `lms`.`tech_stack` (
+  `id` INT NOT NULL,
+  `tech_name` VARCHAR(45) NOT NULL,
+  `image_path` VARCHAR(45) NOT NULL,
+  `framework` VARCHAR(45) NOT NULL,
+  `cur_status` VARCHAR(45) NOT NULL,
+  `creator_stamp` TIMESTAMP(6) NOT NULL,
+  `creator_user` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`));
