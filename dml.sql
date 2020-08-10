@@ -179,3 +179,13 @@ CREATE TABLE `lms`.`lab` (
   `creator_stamp` TIMESTAMP(6) NOT NULL,
   `creator_user` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`));
+
+-- sql query to create tech_type table
+
+CREATE TABLE `lms`.`tech_type` (
+  `id` INT NOT NULL,
+  `type_name` VARCHAR(45) NOT NULL,
+  `cur_status` VARCHAR(45) NOT NULL,
+  `creator_stamp` TIMESTAMP(6) NOT NULL,
+  `creator_user` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`));
