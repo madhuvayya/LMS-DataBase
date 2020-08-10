@@ -223,3 +223,14 @@ CREATE TABLE `lms`.`mentor_ideation_map` (
   `creator_stamp` TIMESTAMP(6) NOT NULL,
   `creator_user` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`));
+
+-- sql query to create mentor_tech_stack table
+
+CREATE TABLE `lms`.`mentor_tech_stack` (
+  `id` INT NOT NULL,
+  `mentor_id` VARCHAR(45) NOT NULL,
+  `tech_stack_id` VARCHAR(45) NOT NULL,
+  `status` VARCHAR(45) NOT NULL,
+  `creator_stamp` DATETIME NOT NULL,
+  `creator_user` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`));
