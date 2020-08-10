@@ -201,3 +201,15 @@ CREATE TABLE `lms`.`tech_stack` (
   `creator_stamp` TIMESTAMP(6) NOT NULL,
   `creator_user` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`));
+
+-- sql query to create mentor table
+
+CREATE TABLE `lms`.`mentor` (
+  `id` INT NOT NULL,
+  `name` VARCHAR(45) NOT NULL,
+  `mentor_type` VARCHAR(45) NOT NULL,
+  `lab_id` VARCHAR(45) NOT NULL,
+  `status` VARCHAR(45) NOT NULL,
+  `creator_stamp` TIMESTAMP(6) NOT NULL,
+  `creator_user` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`));
