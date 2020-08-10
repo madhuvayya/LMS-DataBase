@@ -234,3 +234,17 @@ CREATE TABLE `lms`.`mentor_tech_stack` (
   `creator_stamp` DATETIME NOT NULL,
   `creator_user` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`));
+
+-- sql query to create lab_threshold table
+
+CREATE TABLE `lms`.`lab_threshold` (
+  `id` INT NOT NULL,
+  `lab_id` VARCHAR(45) NOT NULL,
+  `lab_capacity` INT UNSIGNED NOT NULL,
+  `lead_threshold` INT UNSIGNED NOT NULL,
+  `ideation_engg_threshold` INT UNSIGNED NOT NULL,
+  `buddy_engg_threshold` INT UNSIGNED NOT NULL,
+  `status` VARCHAR(45) NOT NULL,
+  `creator_stamp` TIMESTAMP(6) NOT NULL,
+  `creator_user` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`));
