@@ -1,7 +1,9 @@
+-- lms schema sql query
+
 CREATE SCHEMA `lms` ;
 
 
---User Details table
+--User Details table sql query
 
 CREATE TABLE `lms`.`user_details` (
   `id` INT NOT NULL,
@@ -16,7 +18,7 @@ CREATE TABLE `lms`.`user_details` (
   PRIMARY KEY (`id`),
   UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE);
 
---Hired Candidate table
+--Hired Candidate table sql query
 
 CREATE TABLE `lms`.`hired_candidate` (
   `id` INT NOT NULL,
@@ -39,7 +41,7 @@ CREATE TABLE `lms`.`hired_candidate` (
   `creator_user` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`));
 
---fellowship table
+--fellowship table sql query
 
 CREATE TABLE `lms`.`fellowship_candidate` (
   `candidate_id` INT UNSIGNED NOT NULL,
@@ -75,3 +77,31 @@ CREATE TABLE `lms`.`fellowship_candidate` (
   `document_status` VARCHAR(45) NOT NULL,
   `remark` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`candidate_id`));
+
+-- candidate bank details table sql query
+
+CREATE TABLE `lms`.`candidate_bank_details` (
+  `id` INT NOT NULL,
+  `candidate_id` INT UNSIGNED NOT NULL,
+  `name` VARCHAR(45) NOT NULL,
+  `account_number` VARCHAR(45) NOT NULL,
+  `is_account_number_verified` VARCHAR(45) NOT NULL,
+  `ifsc_code` VARCHAR(11) NOT NULL,
+  `is_ifsc_code_verified` VARCHAR(45) NOT NULL,
+  `pan_number` VARCHAR(10) NOT NULL,
+  ` is_pan_number_verified` VARCHAR(45) NOT NULL,
+  `candidate_bank_detailscol` VARCHAR(45) NOT NULL,
+  `addhaar_num` VARCHAR(12) NOT NULL,
+  `is_addhaar_num_verified` VARCHAR(45) NOT NULL,
+  `creator_stamp` TIMESTAMP(6) NOT NULL,
+  `creator_user` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `candidate_id_idx` (`candidate_id` ASC) VISIBLE,
+  UNIQUE INDEX `account_number_UNIQUE` (`account_number` ASC) VISIBLE,
+  UNIQUE INDEX `pan_number_UNIQUE` (`pan_number` ASC) VISIBLE,
+  UNIQUE INDEX `addhaar_num_UNIQUE` (`addhaar_num` ASC) VISIBLE,
+  CONSTRAINT `candidate_id`
+    FOREIGN KEY (`candidate_id`)
+    REFERENCES `lms`.`fellowship_candidate` (`candidate_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
