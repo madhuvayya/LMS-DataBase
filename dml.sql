@@ -315,3 +315,18 @@ CREATE TABLE lms.company_requirement (
     FOREIGN KEY (ideation_engg_id) REFERENCES mentor (id),
     FOREIGN KEY (buddy_engg_id) REFERENCES mentor (id) 
 );
+
+-- sql query to create candidate_stack_assignment table
+
+CREATE TABLE lms.candidate_stack_assignment (
+	id INT UNSIGNED NOT NULL,
+    requirement_id INT UNSIGNED NOT NULL,
+    candidate_id INT UNSIGNED NOT NULL,
+    assign_date DATE NOT NULL,
+    status VARCHAR(10) NOT NULL,
+    creator_stamp TIMESTAMP NOT NULL,
+    creator_user VARCHAR(45) NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (requirement_id) REFERENCES company_requirement (id),
+    FOREIGN KEY (candidate_id) REFERENCES fellowship_candidate (candidate_id)
+);
