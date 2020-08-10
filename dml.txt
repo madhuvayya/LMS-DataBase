@@ -105,3 +105,21 @@ CREATE TABLE `lms`.`candidate_bank_details` (
     REFERENCES `lms`.`fellowship_candidate` (`candidate_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
+
+-- candidate_documents table creation sql query
+
+CREATE TABLE `lms`.`candidate_documents` (
+  `id` INT UNSIGNED NOT NULL,
+  `candidate_id` INT UNSIGNED NOT NULL,
+  `doc_type` VARCHAR(45) NOT NULL,
+  `doc_path` VARCHAR(45) NOT NULL,
+  `status` VARCHAR(45) NOT NULL,
+  `creator_stamp` TIMESTAMP(6) NOT NULL,
+  `creator_user` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `candidate_id_idx` (`candidate_id` ASC) VISIBLE,
+  CONSTRAINT `candidate_documenst_fk_candidate_id`
+    FOREIGN KEY (`candidate_id`)
+    REFERENCES `lms`.`fellowship_candidate` (`candidate_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
