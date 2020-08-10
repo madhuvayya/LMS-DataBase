@@ -124,7 +124,7 @@ CREATE TABLE `lms`.`candidate_documents` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
 
--- sql query for creating company
+-- sql query for creating company table
 
 CREATE TABLE `lms`.`company` (
   `id` INT UNSIGNED NOT NULL,
@@ -135,3 +135,35 @@ CREATE TABLE `lms`.`company` (
   `creator_stamp` TIMESTAMP(6) NOT NULL,
   `creator_user` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`));
+
+-- sql query for creatin candidate_qualification table
+
+CREATE TABLE `lms`.`candidate_qualification` (
+  `id` INT UNSIGNED NOT NULL,
+  `candidate_qualification_fk_candidate_id` INT UNSIGNED NOT NULL,
+  `diploma` VARCHAR(60) NOT NULL,
+  `degree_name` VARCHAR(45) NOT NULL,
+  `is_degree_name_verified` TINYINT NOT NULL,
+  `employee_decipline` VARCHAR(45) NULL,
+  `is_employee_decipline_verified` TINYINT NULL,
+  `passing_year` YEAR(4) NOT NULL,
+  `is_passing_year_verified` TINYINT NOT NULL,
+  `aggr_per` DECIMAL(4,2) UNSIGNED NOT NULL,
+  `is_aggr_per_verified` TINYINT NOT NULL,
+  `final_year_per` DECIMAL(4,2) UNSIGNED NOT NULL,
+  `is_final_year_per_verified` TINYINT NOT NULL,
+  `training_institute` VARCHAR(100) NULL,
+  `is_training_institute_verified` TINYINT NULL,
+  `training_duration_month` INT(2) NULL,
+  `is_training_duration_month_verified` TINYINT NULL,
+  `other_training` VARCHAR(150) NULL,
+  `is_other_training_verified` TINYINT NULL,
+  `creator_stamp` TIMESTAMP(6) NOT NULL,
+  `creator_user` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `candidate_qualification_fk_candidate_id_idx` (`candidate_qualification_fk_candidate_id` ASC) VISIBLE,
+  CONSTRAINT `candidate_qualification_fk_candidate_id`
+    FOREIGN KEY (`candidate_qualification_fk_candidate_id`)
+    REFERENCES `lms`.`fellowship_candidate` (`candidate_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
