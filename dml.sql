@@ -286,3 +286,32 @@ CREATE TABLE lms.lab_threshold (
 	PRIMARY KEY (id),
 	FOREIGN KEY (lab_id) REFERENCES lms.lab(id)
 );
+
+-- sql query to create company_requirement table
+
+CREATE TABLE lms.company_requirement (
+	id INT UNSIGNED NOT NULL,
+    company_id INT UNSIGNED NOT NULL,
+    requested_month INT UNSIGNED NOT NULL,
+    city VARCHAR(30) NOT NULL,
+    is_doc_verifrication VARCHAR(10) NOT NULL,
+    requirement_doc_path VARCHAR(70) NOT NULL,
+    no_of_engg INT UNSIGNED NOT NULL,
+    tech_stack_id INT NOT NULL,
+    tech_type_id INT NOT NULL,
+    maker_program_id  INT UNSIGNED NOT NULL,
+    lead_id INT NOT NULL,
+    ideation_engg_id INT NOT NULL,
+    buddy_engg_id INT NOT NULL,
+    special_remark VARCHAR(250) NOT NULL,
+    status VARCHAR(50) NOT NULL,
+    creator_stamp TIMESTAMP NOT NULL,
+    creator_user VARCHAR(45) NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (tech_stack_id) REFERENCES tech_stack (id),
+    FOREIGN KEY (tech_type_id) REFERENCES tech_type (id),
+    FOREIGN KEY (maker_program_id) REFERENCES maker_program (id),
+    FOREIGN KEY (lead_id) REFERENCES mentor (id),
+    FOREIGN KEY (ideation_engg_id) REFERENCES mentor (id),
+    FOREIGN KEY (buddy_engg_id) REFERENCES mentor (id) 
+);
