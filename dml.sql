@@ -69,3 +69,36 @@ VALUES ('jayanth','v','jaynth@gmail.com','mumbai','B.Tech','4561213211','456125'
 
 INSERT INTO lms.hired_candidate(first_name,last_name, email_id,hired_city,degree,mobile_number,permanent_pincode,hired_lab,attitude,communication_remark,knowledge_remark,aggregate_remark,status,creator_user)
 VALUES ('tharun','K','tharun.123@yahoo.com','banglore','M.S','4861131362','133131','Lab2','OK','GOOD','OK',82.3,'Rejected','Suresh');
+
+-- queries to alter the column datatype and default values
+
+ALTER TABLE lms.fellowship_candidate 
+MODIFY hired_date DATE;
+
+ALTER TABLE lms.fellowship_candidate 
+MODIFY email_id VARCHAR(100) NOT NULL UNIQUE;
+
+ALTER TABLE lms.fellowship_candidate 
+MODIFY creator_stamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
+
+ALTER TABLE lms.fellowship_candidate 
+MODIFY aggregate_remark DECIMAL(4,2) NOT NULL;
+
+ALTER TABLE lms.fellowship_candidate 
+MODIFY local_address VARCHAR(255);
+
+ALTER TABLE lms.fellowship_candidate 
+MODIFY hired_date DATE NOT NULL;
+
+ALTER TABLE lms.fellowship_candidate 
+MODIFY parent_mobile_number BIGINT;
+
+ALTER TABLE lms.fellowship_candidate 
+MODIFY photo_path VARCHAR(200) NOT NULL;
+
+ALTER TABLE lms.fellowship_candidate 
+MODIFY personal_information VARCHAR(200);
+
+ALTER TABLE lms.fellowship_candidate 
+MODIFY joining_date DATE DEFAULT (DATE(CURRENT_TIMESTAMP));
+
