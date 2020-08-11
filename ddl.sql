@@ -17,6 +17,11 @@ CREATE TABLE IF NOT EXISTS lms.user_details (
   PRIMARY KEY (id)
 );
 
+-- sql query to add auto increment to user_details table id
+
+ALTER TABLE lms.user_details 
+MODIFY id INT NOT NULL AUTO_INCREMENT;
+
 -- Hired Candidate table sql query
 
 CREATE TABLE IF NOT EXISTS lms.hired_candidate (
