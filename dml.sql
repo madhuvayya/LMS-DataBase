@@ -58,3 +58,14 @@ MODIFY communication_remark VARCHAR(10) NOT NULL;
 
 ALTER TABLE lms.hired_candidate 
 MODIFY knowledge_remark VARCHAR(10) NOT NULL;
+
+-- queries to insert data into hired_candidate table
+
+INSERT INTO lms.hired_candidate(first_name,middle_name,last_name, email_id,hired_city,degree,mobile_number,permanent_pincode,hired_lab,attitude,communication_remark,knowledge_remark,aggregate_remark,status,creator_user)
+VALUES ('madhu','kuamar','v','madhu@gmail.com','banglore','B.Tech','7894561233','500072','Lab1','Good','OK','OK',72.4,'Pending','suresh'); 
+
+INSERT INTO lms.hired_candidate(first_name,last_name, email_id,hired_city,degree,mobile_number,permanent_pincode,hired_lab,attitude,communication_remark,knowledge_remark,aggregate_remark,status,creator_user)
+VALUES ('jayanth','v','jaynth@gmail.com','mumbai','B.Tech','4561213211','456125','Lab3','Good','EXCELLENT','OK',90.7,'Accepted','Naresh');
+
+INSERT INTO lms.hired_candidate(first_name,last_name, email_id,hired_city,degree,mobile_number,permanent_pincode,hired_lab,attitude,communication_remark,knowledge_remark,aggregate_remark,status,creator_user)
+VALUES ('tharun','K','tharun.123@yahoo.com','banglore','M.S','4861131362','133131','Lab2','OK','GOOD','OK',82.3,'Rejected','Suresh');
