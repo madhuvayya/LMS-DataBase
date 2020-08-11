@@ -102,3 +102,20 @@ MODIFY personal_information VARCHAR(200);
 ALTER TABLE lms.fellowship_candidate 
 MODIFY joining_date DATE DEFAULT (DATE(CURRENT_TIMESTAMP));
 
+-- sql queries to insert data into fellowship_candidate table
+
+ INSERT INTO lms.fellowship_candidate
+		(first_name,last_name,email_id,hired_city,hired_date ,mobile_number,permanent_pincode,hired_lab,attitude,communicatin_remark,knowledge_remark,aggregate_remark,creator_user,birth_date,  is_birthdate_verified,parent_name,parmenent_address,photo_path, joining_date, candidate_status,bank_information,educational_information,document_status,remark)
+VALUES ( 'jayanth','y','jaynth@gmail.com','mumbai','2020-08-05',1234567894,321456,'Lab1','Good','OK','Good',85.00 ,'Naresh','1995-05-12','yes','prabhaker','Hyderabad', 'c:\images','2020-08-08','Active','SBI','B.Tech','recieved','Good');
+
+INSERT INTO lms.fellowship_candidate
+		(first_name,last_name,email_id,hired_city,hired_date ,mobile_number,permanent_pincode,hired_lab,attitude,communicatin_remark,knowledge_remark,aggregate_remark,creator_user,birth_date,is_birthdate_verified,parent_name,parmenent_address,photo_path, candidate_status,bank_information,educational_information,document_status,remark)
+VALUES ( 'Madhu','V','madhu@gmail.com','banglore','2020-03-20',7682315245,500072,'Lab2','OK','Good','OK',75 ,'suresh','1994-06-05','yes','vijayarao','Hyderabad', 'c:\images\madhu','Active','SBI','M.Tech','recieved','Good');
+
+INSERT INTO lms.fellowship_candidate
+		(first_name,last_name,email_id,hired_city,hired_date ,mobile_number,permanent_pincode,hired_lab,attitude,communicatin_remark,knowledge_remark,aggregate_remark,creator_user,birth_date,  is_birthdate_verified,parent_name,parmenent_address,photo_path, joining_date, candidate_status,bank_information,educational_information,document_status,remark)
+VALUES ( 'trinath','t','trinath@gmail.com','banglore','2020-03-20',4567891231,612345,'Lab1','Good','OK','Good',89.10 ,'suresh','1992-10-10','yes','shiva','Ongole', 'image','2020-08-08','Active','AndhraBank','MCA','recieved','Satisfactory');
+
+INSERT INTO lms.fellowship_candidate
+		(first_name,last_name,email_id,hired_city,hired_date ,mobile_number,permanent_pincode,hired_lab,attitude,communicatin_remark,knowledge_remark,aggregate_remark,creator_user,birth_date,  is_birthdate_verified,parent_name,parmenent_address,photo_path, candidate_status,bank_information,educational_information,document_status,remark)
+VALUES ( 'phani','n','phani.123@yahoo.com','mumbai','2020-02-10',987643210,7862132,'Lab2','Good','Good','Good',70.8 ,'suresh','1993-07-07','yes','mani','Gudiwada', 'image\phani','Active','CANARABank','B.TECH','recieved','Good');
