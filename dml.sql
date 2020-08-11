@@ -119,3 +119,11 @@ VALUES ( 'trinath','t','trinath@gmail.com','banglore','2020-03-20',4567891231,61
 INSERT INTO lms.fellowship_candidate
 		(first_name,last_name,email_id,hired_city,hired_date ,mobile_number,permanent_pincode,hired_lab,attitude,communicatin_remark,knowledge_remark,aggregate_remark,creator_user,birth_date,  is_birthdate_verified,parent_name,parmenent_address,photo_path, candidate_status,bank_information,educational_information,document_status,remark)
 VALUES ( 'phani','n','phani.123@yahoo.com','mumbai','2020-02-10',987643210,7862132,'Lab2','Good','Good','Good',70.8 ,'suresh','1993-07-07','yes','mani','Gudiwada', 'image\phani','Active','CANARABank','B.TECH','recieved','Good');
+
+-- queries to alter some fields in candidate_bank_details  table
+
+ALTER TABLE lms.candidate_bank_details 
+MODIFY creator_stamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
+
+ALTER TABLE lms.candidate_bank_details
+DROP COLUMN candidate_bank_detailscol;
