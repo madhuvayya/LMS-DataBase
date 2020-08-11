@@ -157,3 +157,19 @@ INSERT INTO lms.candidate_qualification (candidate_id,diploma,degree_name,is_deg
 VALUES (4,'MPC','B.Tech',1,'2017',1,63.9,1,70.5,1,'techsoft it',1,3,1,'suresh');
 INSERT INTO lms.candidate_qualification (candidate_id,diploma,degree_name,is_degree_name_verified,passing_year,is_passing_year_verified,aggr_per,is_aggr_per_verified,final_year_per,is_final_year_per_verified,training_institute,is_training_institute_verified,training_duration_month,is_training_duration_month_verified,creator_user)
 VALUES (2,'MPC','M.Tech',1,'2018',1,88.45,1,85.64,1,'iNetSolv',1,5,1,'suresh');
+
+-- query to alter the creator-stamp column to generate time stamp automatically 
+
+ALTER TABLE lms.company 
+MODIFY creator_stamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
+
+-- queries to insert data into company table 
+
+INSERT INTO lms.company  (name,address,location,status,creator_user)
+VALUES ('vinculum','Candor TechSpace','Noida','Active','suresh');
+INSERT INTO lms.company  (name,address,location,status,creator_user)
+VALUES ('capgemini',' Rajiv Gandhi Infotech Park',' Maharashtra','Active','suresh');
+INSERT INTO lms.company  (name,address,location,status,creator_user)
+VALUES ('meru','Shanti Nagar, Mahakali Caves Road','Mumbai','Active','prashanth');
+INSERT INTO lms.company  (name,address,location,status,creator_user)
+VALUES ('ola','IT park','pune','Inactive','vinay');
