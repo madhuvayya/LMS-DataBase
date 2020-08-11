@@ -141,3 +141,19 @@ VALUES (4,'phani',987654,'yes','CNR9786','yes','klm345322','yes',789011234562,'y
 
 INSERT INTO lms.candidate_bank_details (candidate_id,name,account_number,is_account_number_verified,ifsc_code,is_ifsc_code_verified,pan_number,is_pan_number_verified,addhaar_num,is_addhaar_num_verified,creator_user)
 VALUES (2,'Madhu',7681234,'yes','SBI7865','yes','ijk768153','yes',456278901123,'yes','suresh');
+
+-- query to alter the creator-stamp column to generate time stamp automatically 
+
+ALTER TABLE lms.candidate_qualification 
+MODIFY creator_stamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
+
+-- queries to insert data into candidate_qualificatino table 
+
+INSERT INTO lms.candidate_qualification (candidate_id,diploma,degree_name,is_degree_name_verified,passing_year,is_passing_year_verified,aggr_per,is_aggr_per_verified,final_year_per,is_final_year_per_verified,training_institute,is_training_institute_verified,training_duration_month,is_training_duration_month_verified,other_training,is_other_training_verified,creator_user)
+VALUES (1,'MPC','B.Tech',1,'2018',1,85.00,1,88.5,1,'global it',1,5,1,'networking',1,'Naresh');
+INSERT INTO lms.candidate_qualification (candidate_id,diploma,degree_name,is_degree_name_verified,employee_decipline,is_employee_decipline_verified,passing_year,is_passing_year_verified,aggr_per,is_aggr_per_verified,final_year_per,is_final_year_per_verified,creator_user)
+VALUES (3,'BSc','MCA',1,'network engg',0,'2016',1,70.35,1,80.25,1,'suresh');
+INSERT INTO lms.candidate_qualification (candidate_id,diploma,degree_name,is_degree_name_verified,passing_year,is_passing_year_verified,aggr_per,is_aggr_per_verified,final_year_per,is_final_year_per_verified,training_institute,is_training_institute_verified,training_duration_month,is_training_duration_month_verified,creator_user)
+VALUES (4,'MPC','B.Tech',1,'2017',1,63.9,1,70.5,1,'techsoft it',1,3,1,'suresh');
+INSERT INTO lms.candidate_qualification (candidate_id,diploma,degree_name,is_degree_name_verified,passing_year,is_passing_year_verified,aggr_per,is_aggr_per_verified,final_year_per,is_final_year_per_verified,training_institute,is_training_institute_verified,training_duration_month,is_training_duration_month_verified,creator_user)
+VALUES (2,'MPC','M.Tech',1,'2018',1,88.45,1,85.64,1,'iNetSolv',1,5,1,'suresh');
