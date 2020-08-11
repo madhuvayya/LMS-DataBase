@@ -127,3 +127,17 @@ MODIFY creator_stamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
 
 ALTER TABLE lms.candidate_bank_details
 DROP COLUMN candidate_bank_detailscol;
+
+-- queries to insert the data into candidate_bank_details table
+
+INSERT INTO lms.candidate_bank_details (candidate_id,name,account_number,is_account_number_verified,ifsc_code,is_ifsc_code_verified,pan_number,is_pan_number_verified,addhaar_num,is_addhaar_num_verified,creator_user)
+VALUES (1,'jayanth',123456,'yes','SBI23424','yes','nbjf123439','yes',123456789012,'yes','Naresh');
+
+INSERT INTO lms.candidate_bank_details (candidate_id,name,account_number,is_account_number_verified,ifsc_code,is_ifsc_code_verified,pan_number,is_pan_number_verified,addhaar_num,is_addhaar_num_verified,creator_user)
+VALUES (3,'trinath',654321,'yes','ANDB654','yes','xyz12354','yes',678901234512,'yes','suresh');
+
+INSERT INTO lms.candidate_bank_details (candidate_id,name,account_number,is_account_number_verified,ifsc_code,is_ifsc_code_verified,pan_number,is_pan_number_verified,addhaar_num,is_addhaar_num_verified,creator_user)
+VALUES (4,'phani',987654,'yes','CNR9786','yes','klm345322','yes',789011234562,'yes','suresh');
+
+INSERT INTO lms.candidate_bank_details (candidate_id,name,account_number,is_account_number_verified,ifsc_code,is_ifsc_code_verified,pan_number,is_pan_number_verified,addhaar_num,is_addhaar_num_verified,creator_user)
+VALUES (2,'Madhu',7681234,'yes','SBI7865','yes','ijk768153','yes',456278901123,'yes','suresh');
