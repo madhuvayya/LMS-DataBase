@@ -15,14 +15,11 @@ MODIFY creator_stamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
 -- Added data into user details table
 
 INSERT INTO lms.user_details( email,first_name,last_name,password,contact_number,verified,creator_user)
-VALUES ('madhu@gmail.com','madhu','v','123456','7894561233','yes','abc'); 
-
+VALUES ('suresh@gmail.com','suresh','A','123456','7894561233','yes','abc'); 
 INSERT INTO lms.user_details( email,first_name,last_name,password,contact_number,verified,creator_user)
-VALUES ('jayanth@gmail.com','Jayanth','Y','9543321','9211231531','yes','xyz'); 
-
+VALUES ('naresh.1992@gmail.com','Naresh','J','9543321','9211231531','yes','abc'); 
 INSERT INTO lms.user_details( email,first_name,last_name,password,contact_number,verified,creator_user)
-VALUES ('tarun123@gmail.com','Tarun','K','45h1ss','6321184562','no','abc'); 
-
+VALUES ('prashanth@gmail.com','prashanth','n','45h1ss','6321184562','no','abc'); 
 
 -- altered some columns in hired_candidate table
 
@@ -173,3 +170,22 @@ INSERT INTO lms.company  (name,address,location,status,creator_user)
 VALUES ('meru','Shanti Nagar, Mahakali Caves Road','Mumbai','Active','prashanth');
 INSERT INTO lms.company  (name,address,location,status,creator_user)
 VALUES ('ola','IT park','pune','Inactive','vinay');
+
+-- query to alter the tech_stack table 
+
+ALTER TABLE lms.tech_stack 
+MODIFY creator_stamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
+
+ALTER TABLE lms.tech_stack 
+MODIFY tech_name VARCHAR(50) NOT NULL UNIQUE;
+
+-- queries to insert data into tech_stack table 
+
+INSERT INTO lms.tech_stack(tech_name,image_path,framework,cur_status,creator_user)
+VALUES ('Java','java_image.jpg','Spring','Active','suresh');
+INSERT INTO lms.tech_stack(tech_name,image_path,framework,cur_status,creator_user)
+VALUES ('Mobile','mobile_image.png','React native','Active','naresh');
+INSERT INTO lms.tech_stack(tech_name,image_path,framework,cur_status,creator_user)
+VALUES ('PHP','image_php.svg','Laravel','Inactive','suresh');
+INSERT INTO lms.tech_stack(tech_name,image_path,framework,cur_status,creator_user)
+VALUES ('Python','python_image.jpeg','Django','Active','naresh');
