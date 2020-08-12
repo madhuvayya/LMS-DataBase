@@ -325,3 +325,17 @@ INSERT INTO lms.company_requirement(company_id,requested_month,city,is_doc_verif
 VALUES (3,5,'Mumbai','yes','doc_path1',10,1,1,1,4,2,5,'remark','Active','naresh');
 INSERT INTO lms.company_requirement(company_id,requested_month,city,is_doc_verifrication,requirement_doc_path,no_of_engg,tech_stack_id,tech_type_id,maker_program_id,lead_id,ideation_engg_id,buddy_engg_id,special_remark, status, creator_user)
 VALUES (4,4,'Pune','yes','doc_path2',5,4,2,2,4,3,5,'remark','Active','suresh');
+
+-- query to alter the candidate_stack_assignment table
+
+ALTER TABLE lms.candidate_stack_assignment 
+MODIFY creator_stamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
+
+-- queries to insert candidate stack assignment data into candidate_stack_assignment table
+
+INSERT INTO lms.candidate_stack_assignment(requirement_id,candidate_id,assign_date, status, creator_user)
+VALUES (1,1,'2020-07-02','Active','suresh');
+INSERT INTO lms.candidate_stack_assignment(requirement_id,candidate_id,assign_date, status, creator_user)
+VALUES (2,2,'2020-07-02','Active','suresh');
+INSERT INTO lms.candidate_stack_assignment(requirement_id,candidate_id,assign_date, status, creator_user)
+VALUES (1,3,'2020-05-10','Active','naresh');
