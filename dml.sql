@@ -189,3 +189,17 @@ INSERT INTO lms.tech_stack(tech_name,image_path,framework,cur_status,creator_use
 VALUES ('PHP','image_php.svg','Laravel','Inactive','suresh');
 INSERT INTO lms.tech_stack(tech_name,image_path,framework,cur_status,creator_user)
 VALUES ('Python','python_image.jpeg','Django','Active','naresh');
+
+-- query to alter the tech_type table 
+
+ALTER TABLE lms.tech_type 
+MODIFY creator_stamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
+
+-- queries to insert data into tech_type table
+
+INSERT INTO lms.tech_type(type_name,cur_status,creator_user)
+VALUES ('Full Stack','Active','suresh');
+INSERT INTO lms.tech_type(type_name,cur_status,creator_user)
+VALUES ('Backend','Active','naresh');
+INSERT INTO lms.tech_type(type_name,cur_status,creator_user)
+VALUES ('Frontend','Active','suresh');
