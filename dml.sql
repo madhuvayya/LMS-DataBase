@@ -259,3 +259,21 @@ INSERT INTO lms.app_parameters(key_type, key_value, key_text, cur_status, lastup
 VALUES ('DOC_STATUS','RCEVD','Received','A','naresh','suresh',2);
 INSERT INTO lms.app_parameters(key_type, key_value, key_text, cur_status, lastupd_user, creator_user, seq_num)
 VALUES ('CUR_STATUS','IACTV','Inactive','A','naresh','suresh',2);
+
+-- query to alter the mentor table
+
+ALTER TABLE lms.mentor 
+MODIFY creator_stamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
+
+-- queries to insert mentor data into mentor table
+
+INSERT INTO lms.mentor(name,mentor_type,lab_id, status, creator_user)
+VALUES ('Sunil','lead',3,'Active','suresh');
+INSERT INTO lms.mentor(name,mentor_type,lab_id, status, creator_user)
+VALUES ('Venkat','ideation',3,'Active','suresh');
+INSERT INTO lms.mentor(name,mentor_type,lab_id, status, creator_user)
+VALUES ('mohith','buddy',2,'Active','suresh');
+INSERT INTO lms.mentor(name,mentor_type,lab_id, status, creator_user)
+VALUES ('aniket','lead',1,'Active','suresh');
+INSERT INTO lms.mentor(name,mentor_type,lab_id, status, creator_user)
+VALUES ('mohith','buddy',1,'Active','suresh');
