@@ -291,3 +291,17 @@ INSERT INTO lms.mentor_ideation_map(parent_id,mentor_id, status, creator_user)
 VALUES (4,5,'Active','suresh');
 INSERT INTO lms.mentor_ideation_map(parent_id,mentor_id, status, creator_user)
 VALUES (1,3,'Active','suresh');
+
+-- query to alter the mentor_tech_stack table
+
+ALTER TABLE lms.mentor_tech_stack 
+MODIFY creator_stamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
+
+-- queries to insert mentor stack data into mentor_tech_stack table
+
+INSERT INTO lms.mentor_tech_stack(mentor_id,tech_stack_id, status, creator_user)
+VALUES (1,1,'Active','suresh');
+INSERT INTO lms.mentor_tech_stack(mentor_id,tech_stack_id, status, creator_user)
+VALUES (2,1,'Active','suresh');
+INSERT INTO lms.mentor_tech_stack(mentor_id,tech_stack_id, status, creator_user)
+VALUES (4,1,'Active','suresh');
