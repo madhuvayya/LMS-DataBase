@@ -203,3 +203,17 @@ INSERT INTO lms.tech_type(type_name,cur_status,creator_user)
 VALUES ('Backend','Active','naresh');
 INSERT INTO lms.tech_type(type_name,cur_status,creator_user)
 VALUES ('Frontend','Active','suresh');
+
+-- query to alter the lab table 
+
+ALTER TABLE lms.lab 
+MODIFY creator_stamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
+
+-- queries to insert data into lab table
+
+INSERT INTO lms.lab(name,location,address,status,creator_user)
+VALUES ('BridgeLabz Solutions','Mumbai','Malhotra Chambers, Deonar' ,'Active','suresh');
+INSERT INTO lms.lab(name,location,address,status,creator_user)
+VALUES ('BridgeLabz Solutions','Pune','prakash nagar','Active','naresh');
+INSERT INTO lms.lab(name,location,address,status,creator_user)
+VALUES ('BridgeLabz Solutions','Bangalore','hsr layout','Active','suresh');
