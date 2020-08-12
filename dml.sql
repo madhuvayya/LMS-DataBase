@@ -217,3 +217,20 @@ INSERT INTO lms.lab(name,location,address,status,creator_user)
 VALUES ('BridgeLabz Solutions','Pune','prakash nagar','Active','naresh');
 INSERT INTO lms.lab(name,location,address,status,creator_user)
 VALUES ('BridgeLabz Solutions','Bangalore','hsr layout','Active','suresh');
+
+-- query to alter the lab_threshold table 
+
+ALTER TABLE lms.lab_threshold 
+MODIFY creator_stamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
+
+ALTER TABLE lms.lab_threshold 
+MODIFY lab_id INT UNSIGNED NOT NULL UNIQUE;
+
+-- queries to insert lab capacity data into lab_threshold table
+
+INSERT INTO lms.lab_threshold(lab_id, lab_capacity, lead_threshold, ideation_engg_threshold, buddy_engg_threshold, status, creator_user)
+VALUES (1,250,6,20,40,'Active','suresh');
+INSERT INTO lms.lab_threshold(lab_id, lab_capacity, lead_threshold, ideation_engg_threshold, buddy_engg_threshold, status, creator_user)
+VALUES (2,150,3,15,20,'Active','naresh');
+INSERT INTO lms.lab_threshold(lab_id, lab_capacity, lead_threshold, ideation_engg_threshold, buddy_engg_threshold, status, creator_user)
+VALUES (3,150,4,15,20,'Active','suresh');
