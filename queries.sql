@@ -22,3 +22,23 @@ FROM lms.fellowship_candidate t1
     LEFT JOIN lms.candidate_bank_details t2
 		ON t1.candidate_id = t2.candidate_id
 WHERE t2.candidate_id IS NULL;
+
+-- query to find name of candidates which is joined in dec month
+
+SELECT first_name 
+From lms.fellowship_candidate 
+WHERE joining_date BETWEEN '2019-12-01' AND '2019-12-31' ;
+
+-- 10-find name of candidates which is joined in dec month
+
+-- query to find candidate who joined in dec for the year 2019 
+
+SELECT first_name 
+From lms.fellowship_candidate 
+WHERE joining_date BETWEEN '2019-12-01' AND '2019-12-31' ;
+
+-- query to find candidate who joined in dec irrespective of year
+
+SELECT first_name
+FROM lms.fellowship_candidate
+WHERE MONTH(joining_date)= 12;
