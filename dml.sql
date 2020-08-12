@@ -234,3 +234,28 @@ INSERT INTO lms.lab_threshold(lab_id, lab_capacity, lead_threshold, ideation_eng
 VALUES (2,150,3,15,20,'Active','naresh');
 INSERT INTO lms.lab_threshold(lab_id, lab_capacity, lead_threshold, ideation_engg_threshold, buddy_engg_threshold, status, creator_user)
 VALUES (3,150,4,15,20,'Active','suresh');
+
+-- query to alter the app_parameters table 
+
+ALTER TABLE lms.app_parameters 
+MODIFY creator_stamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
+
+ALTER TABLE lms.app_parameters 
+MODIFY cur_status VARCHAR(45) NOT NULL;
+
+ALTER TABLE lms.app_parameters 
+MODIFY key_type VARCHAR(20) NOT NULL;
+
+ALTER TABLE lms.app_parameters 
+MODIFY lastupd_stamp TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;
+
+-- queries to insert data into app_parameters table
+
+INSERT INTO lms.app_parameters(key_type, key_value, key_text, cur_status, lastupd_user, creator_user, seq_num)
+VALUES ('DOC_STATUS','PND','Pending','A','suresh','suresh',1);
+INSERT INTO lms.app_parameters(key_type, key_value, key_text, cur_status, lastupd_user, creator_user, seq_num)
+VALUES ('CUR_STATUS','ACTV','Active','A','suresh','naresh',1);
+INSERT INTO lms.app_parameters(key_type, key_value, key_text, cur_status, lastupd_user, creator_user, seq_num)
+VALUES ('DOC_STATUS','RCEVD','Received','A','naresh','suresh',2);
+INSERT INTO lms.app_parameters(key_type, key_value, key_text, cur_status, lastupd_user, creator_user, seq_num)
+VALUES ('CUR_STATUS','IACTV','Inactive','A','naresh','suresh',2);
