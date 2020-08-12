@@ -305,3 +305,23 @@ INSERT INTO lms.mentor_tech_stack(mentor_id,tech_stack_id, status, creator_user)
 VALUES (2,1,'Active','suresh');
 INSERT INTO lms.mentor_tech_stack(mentor_id,tech_stack_id, status, creator_user)
 VALUES (4,1,'Active','suresh');
+
+-- query to alter the company_requirement table
+
+ALTER TABLE lms.company_requirement 
+MODIFY creator_stamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
+
+ALTER TABLE lms.company_requirement 
+MODIFY is_doc_verifrication BOOLEAN NOT NULL;
+
+ALTER TABLE lms.company_requirement 
+MODIFY requested_month VARCHAR(10) NOT NULL;
+
+-- queries to insert company requirements data into company_requirement table
+
+INSERT INTO lms.company_requirement(company_id,requested_month,city,is_doc_verifrication,requirement_doc_path,no_of_engg,tech_stack_id,tech_type_id,maker_program_id,lead_id,ideation_engg_id,buddy_engg_id,special_remark, status, creator_user)
+VALUES (2,3,'Bangalore','yes','doc_path',20,1,1,1,1,2,3,'remark','Active','suresh');
+INSERT INTO lms.company_requirement(company_id,requested_month,city,is_doc_verifrication,requirement_doc_path,no_of_engg,tech_stack_id,tech_type_id,maker_program_id,lead_id,ideation_engg_id,buddy_engg_id,special_remark, status, creator_user)
+VALUES (3,5,'Mumbai','yes','doc_path1',10,1,1,1,4,2,5,'remark','Active','naresh');
+INSERT INTO lms.company_requirement(company_id,requested_month,city,is_doc_verifrication,requirement_doc_path,no_of_engg,tech_stack_id,tech_type_id,maker_program_id,lead_id,ideation_engg_id,buddy_engg_id,special_remark, status, creator_user)
+VALUES (4,4,'Pune','yes','doc_path2',5,4,2,2,4,3,5,'remark','Active','suresh');
