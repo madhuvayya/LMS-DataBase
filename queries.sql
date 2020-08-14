@@ -63,3 +63,8 @@ JOIN lms.candidate_qualification t4
 ON t3.candidate_id = t4.candidate_id
 WHERE t4.degree_name = 'MCA';
 
+-- how many week candidate completed in the bridgelabz since joining date candidate id is 2
+
+SELECT (week(current_date()) - week(t1.joining_date))
+FROM lms.fellowship_candidate t1
+WHERE t1.candidate_id = 2;
