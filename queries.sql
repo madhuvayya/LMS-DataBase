@@ -42,3 +42,11 @@ WHERE joining_date BETWEEN '2019-12-01' AND '2019-12-31' ;
 SELECT first_name
 FROM lms.fellowship_candidate
 WHERE MONTH(joining_date)= 12;
+
+-- 13-find all candidates which is passed out in 2019 year
+
+SELECT t1.first_name 
+FROM lms.fellowship_candidate t1
+LEFT JOIN lms.candidate_qualification t2
+ON t1.candidate_id = t2.candidate_id
+WHERE t2.passing_year = '2019';  
