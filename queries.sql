@@ -88,3 +88,24 @@ WHERE candidate_id = 5;
 SELECT 112 - DATEDIFF(CURRENT_DATE(), t1.joining_date) AS DAYS
 FROM lms.fellowship_candidate t1
 WHERE t1.candidate_id = 6;
+
+-- find candidates which is deployed 
+
+SELECT t1.first_name
+FROM lms.fellowship_candidate t1
+WHERE (MONTH(current_date()) - MONTH(t1.joining_date)) > 4 ; 
+
+-- find name and other details and name of company which is assign to condidate.
+
+SELECT *, t4.name as company_name
+FROM lms.fellowship_candidate t1
+JOIN lms.candidate_stack_assignment t2
+ON t1.candidate_id = t2.candidate_id 
+JOIN lms.company_requirement t3
+ON t3.id = t2.requirement_id
+Join lms.company t4
+ON t4.id = t3.company_id;
+ 
+ 
+
+
