@@ -82,3 +82,9 @@ call getJoiningDate(4);
 SELECT 16 - (WEEK(current_date()) - WEEK(t1.joining_date)) 
 FROM lms.fellowship_candidate t1
 WHERE candidate_id = 5;
+
+-- how many days remaining of candidate in the bridgelabz from today if candidate is is 6
+
+SELECT 112 - DATEDIFF(CURRENT_DATE(), t1.joining_date) AS DAYS
+FROM lms.fellowship_candidate t1
+WHERE t1.candidate_id = 6;
