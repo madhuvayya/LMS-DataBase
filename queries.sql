@@ -68,3 +68,17 @@ WHERE t4.degree_name = 'MCA';
 SELECT (week(current_date()) - week(t1.joining_date))
 FROM lms.fellowship_candidate t1
 WHERE t1.candidate_id = 2;
+
+-- find joining date of candidate if candidate id is 4
+
+SELECT t1.joining_date
+FROM lms.fellowship_candidate t1
+WHERE t1.candidate_id = 4;
+
+call getJoiningDate(4);
+
+-- how many week remaining of candidate in the bridglabz from today if candidate id is 5
+
+SELECT 16 - (WEEK(current_date()) - WEEK(t1.joining_date)) 
+FROM lms.fellowship_candidate t1
+WHERE candidate_id = 5;
