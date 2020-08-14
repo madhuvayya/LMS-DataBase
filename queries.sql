@@ -29,7 +29,7 @@ SELECT first_name
 From lms.fellowship_candidate 
 WHERE joining_date BETWEEN '2019-12-01' AND '2019-12-31' ;
 
--- 10-find name of candidates which is joined in dec month
+-- find name of candidates which is joined in dec month
 
 -- query to find candidate who joined in dec for the year 2019 
 
@@ -43,10 +43,23 @@ SELECT first_name
 FROM lms.fellowship_candidate
 WHERE MONTH(joining_date)= 12;
 
--- 13-find all candidates which is passed out in 2019 year
+-- find all candidates which is passed out in 2019 year
 
 SELECT t1.first_name 
 FROM lms.fellowship_candidate t1
 LEFT JOIN lms.candidate_qualification t2
 ON t1.candidate_id = t2.candidate_id
 WHERE t2.passing_year = '2019';  
+
+--  which technology assign to whom candidates which is having MCA background
+
+SELECT t1.tech_name , t1.creator_stamp 
+FROM lms.tech_stack t1
+JOIN lms.company_requirement t2
+ON t1.id = t2.tech_stack_id
+JOIN lms.candidate_stack_assignment t3
+ON t2.id = t3.requirement_id
+JOIN lms.candidate_qualification t4 
+ON t3.candidate_id = t4.candidate_id
+WHERE t4.degree_name = 'MCA';
+
