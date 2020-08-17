@@ -114,4 +114,11 @@ LEFT JOIN lms.user_engagement_mis t2
 ON t1.candidate_id = t2.user_name
 WHERE t2.technology = 'java' ; 
 
+--  find all candidate which is present today
+
+SELECT DISTINCT t1.first_name 
+FROM lms.fellowship_candidate t1
+LEFT JOIN lms.user_engagement_mis t2
+ON t1.candidate_id = t2.user_name
+WHERE date(t2.date_time) = '2019-10-22'; 
 
