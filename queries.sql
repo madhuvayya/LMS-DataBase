@@ -106,6 +106,12 @@ ON t3.id = t2.requirement_id
 Join lms.company t4
 ON t4.id = t3.company_id;
  
+-- find all candidate having java technology 
  
+SELECT * 
+FROM lms.fellowship_candidate t1
+LEFT JOIN lms.user_engagement_mis t2
+ON t1.candidate_id = t2.user_name
+WHERE t2.technology = 'java' ; 
 
 
